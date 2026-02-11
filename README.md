@@ -10,6 +10,7 @@ Aquí encontrarás todos los códigos y diagramas de mis videos de YouTube.
 
 | Carpeta del Proyecto | Video Tutorial |
 | :--- | :--- |
+| [📂 2024-05-23-ESP32-RYLR998](./2024-05-23-ESP32-RYLR998) | [Ver en YouTube](https://youtu.be/DOtZwD23ePQ?si=OV8_o_xiKPjvh-SS) |
 | [📂 2025-12-09-ESP32-Flask-OpenCV](./2025-12-09-ESP32-Flask-OpenCV) | [Ver en YouTube](https://youtu.be/4h0uwJPNmyU) |
 
 ---
