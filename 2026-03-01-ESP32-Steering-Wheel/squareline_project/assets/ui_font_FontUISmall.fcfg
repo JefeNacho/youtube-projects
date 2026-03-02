@@ -1,0 +1,16 @@
+{
+  "codename": "FontUISmall",
+  "ttf_path": "/assets/Inter.ttf",
+  "bin_path": "/assets\\ui_font_FontUISmall.bin",
+  "c_path": "/assets\\ui_font_FontUISmall.c",
+  "cfg_path": "/assets\\ui_font_FontUISmall.fcfg",
+  "size": 14,
+  "bpp": 1,
+  "letters": 0,
+  "ranges": [
+    "0x20-0x7f"
+  ],
+  "symbols": "",
+  "customparams": "--no-compress --no-prefilter",
+  "uploaded": false
+}
