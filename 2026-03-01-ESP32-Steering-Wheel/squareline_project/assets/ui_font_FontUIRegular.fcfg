@@ -1,0 +1,16 @@
+{
+  "codename": "FontUIRegular",
+  "ttf_path": "/assets/Inter.ttf",
+  "bin_path": "/assets\\ui_font_FontUIRegular.bin",
+  "c_path": "/assets\\ui_font_FontUIRegular.c",
+  "cfg_path": "/assets\\ui_font_FontUIRegular.fcfg",
+  "size": 18,
+  "bpp": 1,
+  "letters": 0,
+  "ranges": [
+    "0x20-0x7f"
+  ],
+  "symbols": "",
+  "customparams": "--no-compress --no-prefilter",
+  "uploaded": false
+}

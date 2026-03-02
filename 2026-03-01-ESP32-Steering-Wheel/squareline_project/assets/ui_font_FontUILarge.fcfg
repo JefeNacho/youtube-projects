@@ -1,0 +1,16 @@
+{
+  "codename": "FontUILarge",
+  "ttf_path": "/assets/GoogleSans.ttf",
+  "bin_path": "/assets\\ui_font_FontUILarge.bin",
+  "c_path": "/assets\\ui_font_FontUILarge.c",
+  "cfg_path": "/assets\\ui_font_FontUILarge.fcfg",
+  "size": 24,
+  "bpp": 1,
+  "letters": 0,
+  "ranges": [
+    "0x20-0x7f"
+  ],
+  "symbols": "",
+  "customparams": "--no-compress --no-prefilter",
+  "uploaded": false
+}
