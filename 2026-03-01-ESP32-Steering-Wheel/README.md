@@ -21,19 +21,21 @@ Permite la comunicación bidireccional entre el volante físico y el juego (Euro
 El siguiente diagrama muestra la arquitectura física del volante, cómo se conectan los periféricos usando las **PCBs Custom** (`Esp32-c3-middleware` y `pedal-pcb`) al ESP32-C3, y cómo este se comunica con el PC y la pantalla táctil Elecrow.
 
 ```mermaid
-graph TD
-    PC["💻 PC (Euro Truck Simulator 2)"] <--> |USB-C vJoy Trans| ESP32["🧠 ESP32-C3 Super Mini (Cerebro)"]
+graph LR
+    PC["💻 PC (ETS2)"] <--> |"USB-C (vJoy)"| ESP32["🧠 ESP32-C3 Super Mini"]
 
-    ESP32 --> |UART TX21 RX20| Pantalla["📺 Panel Elecrow Advanced 4.3"]
+    ESP32 --> |"UART (TX:21, RX:20)"| Pantalla["📺 Panel Elecrow 4.3"]
 
-    subgraph Volante ["Volante (Esp32-c3-middleware PCB)"]
+    subgraph Volante ["Volante (PCB Middleware)"]
+        direction TB
         PIN_STEER["🎛️ Eje Dirección (PIN 3)"] --> ESP32
         PIN_HORN["🔘 Claxon (PIN 4)"] --> ESP32
     end
 
-    subgraph Pedalera ["Pedalera (pedal-pcb PCB)"]
-        PIN_GAS["⚡ Acelerador (PIN 0)"] -.-> |Conector HW| ESP32
-        PIN_BRAKE["🛑 Freno (PIN 1)"] -.-> |Conector HW| ESP32
+    subgraph Pedalera ["Pedalera (PCB Pedales)"]
+        direction TB
+        PIN_GAS["⚡ Acelerador (PIN 0)"] -.-> |"Conector HW"| ESP32
+        PIN_BRAKE["🛑 Freno (PIN 1)"] -.-> |"Conector HW"| ESP32
     end
 ```
 
