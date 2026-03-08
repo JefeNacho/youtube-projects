@@ -16,13 +16,13 @@ Permite la comunicación bidireccional entre el volante físico y el juego (Euro
 
 ---
 
-## � Diagrama de Conexiones
+## Diagrama de Conexiones
 
 El siguiente diagrama muestra la arquitectura física del volante, cómo se conectan los periféricos usando las **PCBs Custom** (`Esp32-c3-middleware` y `pedal-pcb`) al ESP32-C3, y cómo este se comunica con el PC y la pantalla táctil Elecrow.
 
 ```mermaid
 graph TD
-    PC["💻 PC (Euro Truck Simulator 2)"] <-->|USB-C (vJoy / Telemetría)| ESP32["🧠 ESP32-C3 Super Mini<br>(Cerebro Principal)"]
+    PC["💻 PC (Euro Truck Simulator 2)"] ---|USB-C (vJoy / Telemetría)| ESP32["🧠 ESP32-C3 Super Mini<br>(Cerebro Principal)"]
 
     ESP32 -->|UART (TX: 21, RX: 20)| Pantalla["📺 Panel Elecrow Advanced 4.3\""]
 
