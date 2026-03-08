@@ -16,7 +16,31 @@ Permite la comunicación bidireccional entre el volante físico y el juego (Euro
 
 ---
 
-## 📦 Estructura del Repositorio
+## � Diagrama de Conexiones
+
+El siguiente diagrama muestra la arquitectura física del volante, cómo se conectan los periféricos usando las **PCBs Custom** (`Esp32-c3-middleware` y `pedal-pcb`) al ESP32-C3, y cómo este se comunica con el PC y la pantalla táctil Elecrow.
+
+```mermaid
+graph TD
+    PC["💻 PC (Euro Truck Simulator 2)"] <-->|USB-C (vJoy / Telemetría)| ESP32["🧠 ESP32-C3 Super Mini<br>(Cerebro Principal)"]
+
+    ESP32 -->|UART (TX: 21, RX: 20)| Pantalla["📺 Panel Elecrow Advanced 4.3\""]
+
+    subgraph "Volante (Esp32-c3-middleware PCB)"
+        ESP32
+        PIN_STEER["🎛️ Eje Dirección<br>(PIN 3 - Analógico)"] --> ESP32
+        PIN_HORN["🔘 Claxon<br>(PIN 4 - PullDown)"] --> ESP32
+    end
+
+    subgraph "Pedalera (pedal-pcb PCB)"
+        PIN_GAS["⚡ Acelerador<br>(PIN 0 - PullUp)"] -.->|Conector a Middleware| ESP32
+        PIN_BRAKE["🛑 Freno<br>(PIN 1 - PullUp)"] -.->|Conector a Middleware| ESP32
+    end
+```
+
+---
+
+## �📦 Estructura del Repositorio
 
 - **`ets2_real_bridge.py`**: El "cerebro" en PC. Es un script de Python que lee la telemetría del juego, recibe lecturas físicas del ESP32 por USB (Serial), envía pulsaciones virtuales a vJoy, y manda datos de vuelta a la pantalla.
 - **`esp32_c3_steering_wheel/`**: Firmware del ESP32-C3 (escrito en PlatformIO/C++ con FreeRTOS). Lee los valores analógicos y de los botones del volante, enviándolos al PC. **Además, actúa como puente físico**: recibe los paquetes de telemetría del PC (Velocidad, RPM, etc.) y se los reenvía por puerto Serial a la pantalla Elecrow para que esta los dibuje.
