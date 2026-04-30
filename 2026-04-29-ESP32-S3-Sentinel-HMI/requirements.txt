@@ -1,0 +1,7 @@
+pyserial
+psutil
+requests
+sounddevice
+numpy
+scipy
+bleak>=0.21.0

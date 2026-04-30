@@ -1,0 +1,24 @@
+# Credenciales — NUNCA commitear
+sentinel_hmi/secrets.h
+
+# Artefactos Python / PyInstaller
+__pycache__/
+*.pyc
+*.pyo
+build/
+dist/
+*.egg-info/
+*.spec
+
+# Logs y grabaciones de runtime
+sentinel_logs/
+
+# Cache SquareLine Studio
+squareline_project/cache/
+squareline_project/backup/
+
+# IDE / OS
+.vscode/
+.idea/
+*.DS_Store
+Thumbs.db

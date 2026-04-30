@@ -1,0 +1,16 @@
+{
+  "codename": "fontMedium",
+  "ttf_path": "/assets/Inter-VariableFont_opsz,wght.ttf",
+  "bin_path": "/assets\\ui_font_fontMedium.bin",
+  "c_path": "/assets\\ui_font_fontMedium.c",
+  "cfg_path": "/assets\\ui_font_fontMedium.fcfg",
+  "size": 16,
+  "bpp": 2,
+  "letters": 0,
+  "ranges": [
+    "0x20-0x7f"
+  ],
+  "symbols": "°ó",
+  "customparams": "--no-compress --no-prefilter",
+  "uploaded": false
+}

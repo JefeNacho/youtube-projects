@@ -1,0 +1,21 @@
+[build-system]
+requires      = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name        = "sentinel"
+version     = "2.0.0"
+description = "Sentinel Monitor — Cliente Python para enviar logs al panel HMI ESP32-S3"
+readme      = "README.md"
+requires-python = ">=3.10"
+dependencies    = []   # Sin dependencias externas — solo stdlib (socket, os, re)
+
+# Instala el cliente de logging: from sentinel import logger
+# El daemon (sentinel_daemon.py) se ejecuta por separado o como SidecarDaemon.exe
+
+[project.urls]
+Repository = "https://github.com/tuusuario/repo_pantalla"
+
+[tool.setuptools.packages.find]
+# Busca paquetes en src/ para no confundir con la carpeta Arduino sentinel_hmi/
+where = ["src"]

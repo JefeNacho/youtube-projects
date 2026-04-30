@@ -1,0 +1,16 @@
+{
+  "codename": "fontBig",
+  "ttf_path": "/assets/Inter-VariableFont_opsz,wght.ttf",
+  "bin_path": "/assets\\ui_font_fontBig.bin",
+  "c_path": "/assets\\ui_font_fontBig.c",
+  "cfg_path": "/assets\\ui_font_fontBig.fcfg",
+  "size": 56,
+  "bpp": 2,
+  "letters": 0,
+  "ranges": [
+    "0x20-0x7f"
+  ],
+  "symbols": "°",
+  "customparams": "--no-compress --no-prefilter",
+  "uploaded": false
+}
