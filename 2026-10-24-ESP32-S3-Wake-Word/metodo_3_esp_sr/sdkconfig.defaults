@@ -1,0 +1,39 @@
+# Configuración predeterminada ESP-IDF para ESP-SR y ESP32-S3
+
+# Target Architecture
+CONFIG_IDF_TARGET="esp32s3"
+CONFIG_IDF_TARGET_ESP32S3=y
+
+# CPU Freq 240 MHz
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ=240
+
+# Partitions
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+CONFIG_PARTITION_TABLE_FILENAME="partitions.csv"
+
+# FreeRTOS Core configuration
+CONFIG_FREERTOS_UNICORE=n
+CONFIG_FREERTOS_HZ=1000
+
+# Compiler Optimization
+CONFIG_COMPILER_OPTIMIZATION_PERF=y
+
+# ESP-SR Configuration
+CONFIG_MODEL_IN_FLASH=y
+# Palabra de activación (WakeNet9). Deja UNA sola línea activa; para cambiar de palabra, cambia esta línea.
+#   Hi ESP   -> CONFIG_SR_WN_WN9_HIESP=y            Alexa  -> CONFIG_SR_WN_WN9_ALEXA=y
+#   Jarvis   -> CONFIG_SR_WN_WN9_JARVIS_TTS=y       Sophia -> CONFIG_SR_WN_WN9_SOPHIA_TTS=y
+#   Computer -> CONFIG_SR_WN_WN9_COMPUTER_TTS=y
+# Después de cambiarla: borra la carpeta build y el archivo sdkconfig, y vuelve a compilar (mira el README.md).
+CONFIG_SR_WN_WN9_HIESP=y
+CONFIG_ESP32S3_INSTRUCTION_CACHE_32KB=y
+
+# Flash size (chip real detectado por el bootloader: 16MB)
+CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y
+CONFIG_ESPTOOLPY_FLASHSIZE="16MB"
+
+# PSRAM externa (requerida por WakeNet9 + AFE: la RAM interna, ~340KB, no alcanza)
+CONFIG_SPIRAM=y
+CONFIG_SPIRAM_MODE_OCT=y
